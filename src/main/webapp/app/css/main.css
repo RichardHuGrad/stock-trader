@@ -1,0 +1,236 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+.f20 {
+    font-size:20px;
+}
+.f30 {
+    font-size:30px;
+}
+.f40 {
+    font-size:40px;
+}
+.f50 {
+    font-size:50px;
+}
+.f80 {
+    font-size:80px;
+}
+.fB {
+    font-weight:bold;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.dashboard-nav .list-group .list-group-item {
+    padding:5px;
+    border:0;
+}
+
+.dashboard-nav .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.dashboard-nav .list-group .list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.dashboard-nav .list-group .active {
+    background: #E0EFF6;
+}
+ul.main-menu {
+	padding-left: 0;
+	list-style-type: none
+}
+ul.main-menu>li a {
+	display: block;
+	position: relative;
+	padding: 10px 0 10px 15px;
+	color: #555;
+	background-color: #ececec;
+	border-top: 1px solid #dfdfdf
+}
+ul.main-menu>li a: hover {
+	text-decoration: none;
+	background-color: #f1f1f1
+}
+ul.main-menu>li.active>a {
+	font-weight: 700;
+	background-color: #dfdfdf
+}
+ul.main-menu>li: first-child>a {
+	border-top: none
+}
+ul.main-menu>li .fa {
+	width: 14px;
+	text-align: center
+}
+ul.main-menu>li .text {
+	padding-left: 8px;
+	font-size: 0.9em
+}
+ul.main-menu>li .toggle-icon {
+	font-size: 14px;
+	width: 10px;
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	text-shadow: none
+}
+ul.main-menu .sub-menu {
+	position: relative;
+	display: none;
+	padding-left: 0
+}
+ul.main-menu .sub-menu li a {
+	padding-left: 33px
+}
+ul.main-menu .sub-menu li.active a {
+	font-weight: 700
+}
+ul.main-menu .sub-menu.open {
+	overflow: hidden;
+	display: block
+}
+.left-sidebar {
+	padding-right: 0;
+	padding-left: 0
+}
+.left-sidebar.minified {
+	width: 40px;
+	margin-right: -40px;
+	z-index: 9
+}
+.left-sidebar.minified .main-menu>li {
+	position: relative
+}
+.left-sidebar.minified .main-menu>li .fa {
+	width: 40px
+}
+.left-sidebar.minified .main-menu>li .toggle-icon {
+	display: none
+}
+.left-sidebar.minified .main-menu>li>a {
+	padding-left: 0
+}
+.left-sidebar.minified .main-menu>li>a>.text {
+	position: absolute;
+	display: none
+}
+.left-sidebar.minified .main-menu>li: hover>a>.text {
+	position: absolute;
+	display: block;
+	left: 40px;
+	top: 0;
+	min-width: 200px;
+	z-index: 9999;
+	padding: 10px;
+	border: 1px solid #ccc;
+	line-height: 1.5;
+	background: #ccc;
+	font-weight: 700
+}
+.left-sidebar.minified .main-menu>li: hover>ul.sub-menu {
+	display: block !important;
+	min-width: 200px;
+	position: absolute;
+	margin-left: 40px;
+	z-index: 9999;
+	border: 1px solid #E4E4E4;
+	border-top: none
+}
+.left-sidebar.minified .main-menu>li: hover>ul.sub-menu>li>a {
+	padding-left: 10px
+}

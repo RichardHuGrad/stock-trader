@@ -1,0 +1,405 @@
+<html>
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
+  <meta charset="utf-8" /> 
+  <title>StockTrader Analytics</title> 
+  <link rel="icon shortcut" type="image/x-icon" href="" /> 
+  <!-- Schema.org markup for Google+ --> 
+  <meta itemprop="name" content="StockTrader Analytics" />
+  <meta itemprop="image" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./app/css/nv.d3.css" />
+  <link rel="stylesheet" href="./app/css/font-awesome.min.css" >
+  <link rel="stylesheet" href="./app/css/bootstrap-datetimepicker.min.css" >
+  <!-- <script src="http://localhost:35729/livereload.js?snipver=1"></script> --> 
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+    .selectbox {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background: none repeat scroll 0 0 #ffffff;
+        border-color: #ddd;
+        border-image: none;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 0 4px 1px;
+        color: #333333;
+        cursor: pointer;
+        line-height: 18px;
+        padding: 8px;
+        margin: 0px 20px 0px 10px;
+    }
+    
+    canvas {
+      background: #202020;
+      opacity: 0.6;
+    }
+
+    #heatmapContainerWrapper { width: calc(100%); height:9999px; margin:auto; background:rgba(0,0,0,.1); }
+        #heatmapContainer { width:100%; height:9999px;}
+  </style>
+  <style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+/** reset styling **/
+.firebugResetStyles {
+    z-index: 2147483646 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: fixed !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent none !important;
+    pointer-events: none !important;
+    white-space: normal !important;
+}
+style.firebugResetStyles {
+    display: none !important;
+}
+
+.firebugBlockBackgroundColor {
+    background-color: transparent !important;
+}
+
+.firebugResetStyles:before, .firebugResetStyles:after {
+    content: "" !important;
+}
+/**actual styling to be modified by firebug theme**/
+.firebugCanvas {
+    display: none !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    width: auto !important;
+    position: static !important;
+}
+
+.firebugLayoutBoxOffset {
+    opacity: 0.8 !important;
+    position: fixed !important;
+}
+
+.firebugLayoutLine {
+    opacity: 0.4 !important;
+    background-color: #000000 !important;
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    width: 1px !important;
+    height: 100% !important;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    width: 100% !important;
+    height: 1px !important;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px !important;
+    border-top: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px !important;
+    border-left: 1px solid #999999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxParent {
+    border-top: 0 none !important;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none !important;
+    position: fixed !important;
+    width: auto !important;
+}
+
+.firebugRuler{
+    position: absolute !important;
+}
+
+.firebugRulerH {
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 14px !important;
+    background: url("") repeat-x !important;
+    border-top: 1px solid #BBBBBB !important;
+    border-right: 1px dashed #BBBBBB !important;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.firebugRulerV {
+    top: 0 !important;
+    left: -15px !important;
+    width: 14px !important;
+    height: 100% !important;
+    background: url("") repeat-y !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px dashed #BBBBBB !important;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0 !important;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.fbProxyElement {
+    position: fixed !important;
+    pointer-events: auto !important;
+}
+</style>
+ </head> 
+ <body>
+  <section class="container-fluid" id="analyticsapp">
+   <section class="wrapper container-fluid">
+    <header class="container-fluid">
+     <nav class="navbar navbar-inverse" id="mashape-global-header">
+      <div class="container-fluid">
+       <div class="navbar-header">
+        <img src="./images/westernLogoWhite.png" class="navbar-brand logo" style="height:50px;">
+		<a class="navbar-brand logo" href="#">StockTrader Analytics</a>
+       </div>
+       <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+         <ul class="nav navbar-nav navbar-right navbar-account">
+          <li><a href=""><i class="fa fa-question-circle"></i> SUPPORT</a></li>
+          <li><a target="_blank" href=""><i class="fa fa-tasks"></i> DOCS</a></li>
+          <li><a class="key clearfix" data-state="none" href="javascript:void(0)"><i class="fa fa-key"></i><span class="name"> APP KEY</span><input value="55adbc329d6090290c65e35c" class="token" type="text" /><i class="fa fa-close small float right token"></i></a></li>
+          <li class="circle-nav account dropdown"><a style="background-image: url(&quot;./images/4cd12d59601a17323322832c52d5fddc.jpg&quot;);" class="dropdown-toggle" target="_blank" href="javascript:void(0)" data-toggle="dropdown"></a>
+           <ul class="dropdown-menu" role="menu">
+            <li role="presentation"><a target="_blank" href="">Account Settings</a></li>
+            <li role="presentation"><a target="_blank" href="">Billing</a></li>
+            <li role="presentation"><a href="">Logout</a></li>
+           </ul></li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </nav>
+    </header>
+    <section class="container-fluid" id="analytics-content">
+     <div class="env-container container-fluid">
+      <div class="navbar navbar-default local-nav">
+       <div class="container-fluid">
+        <div class="nav navbar-nav">
+         <li class="dropdown complex"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="envSelect"><i class="fa fa-columns"></i> Default Environment<span class="caret float right"></span></button>
+          <ul class="dropdown-menu" role="menu">
+           <li role="presentation"><a href="" class="float left" tabindex="-1" role="menuitem">Default Environment<br/><span class="txt-label-small">Environment Bucket</span></a><button class="btn btn-default float right"><i class="fa fa-cog"></i></button></li>
+           <li class="divider" role="presentation"></li>
+           <li class="padding-min" role="presentation"><button class="btn btn-primary ghost">Create New Environment</button></li>
+          </ul></li>
+         <li class="active"><a href="">API Reports</a></li>
+         <li class=""><a href="">API Logs</a></li>
+        </div>
+        <div class="nav navbar-nav navbar-right"></div>
+       </div>
+      </div>
+      <div class="reports-view container-fluid">
+       <div class="report-sidebar">
+        <ul class="sidebar">
+         <li class="header">Reports</li>
+         <li class="new"><i class="fa fa-plus-circle"></i>New Report</li>
+         <li class=""><a href="index.html"><i class="fa fa-bar-chart"></i>Stock Screener</a></li>
+         <li class=""><a href="GTrendTracker.html"><i class="fa fa-pie-chart"></i>GTrend Tracker</a></li>
+         <li class="active"><a href="PerformancePre.html"><i class="fa fa-area-chart"></i>Performance Prediction</a></li>
+         <li class=""><a href="StockTrendAnaly.html"><i class="fa fa-line-chart"></i>Stock-Trend Analytics</a></li>
+        </ul>
+       </div>
+       <div class="container-fluid" id="report-body">
+        <div class="container-fluid" id="report-body-box">
+         <div class="row report-title">
+          <div class="container-fluid pad-me">
+           <div class="txt-header-big inline">
+            Performance Prediction
+           </div>
+           <a href="" class="report-settings-button"><button class="btn"><i class="fa fa-cog"></i></button></a>
+           <span class="txt-label-small filters-enabled">0 filters enabled</span>
+           <div id="heatmapConfig" class="nav navbar-nav navbar-right pad-me hidden">
+            <li>
+              <div id="pickadate" class="input-group date form_date" style="width: 250px;" data-date="2015-07-01" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="8" type="text" value="" readonly>
+                <span class="input-group-addon"><span class="fa fa-remove"></span></span>
+                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+              </div>
+            </li>
+            <li class="navbar-text txt-smallcaps timeframe-title">timeframes: </li>
+            <li class="dropdown btn-group"><button class="btn" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="timeframe-select"><i class="fa fa-clock"></i>Last 24 Hours<span class="caret float right"></span></button>
+             <ul id="timeRange-select" class="dropdown-menu" aria-labelledby="dLabel" role="menu">
+              <li role="presentation"><a href="javascript:void(0)">Last 3 days</a></li>
+              <li role="presentation"><a href="javascript:void(0)">Last 7 days</a></li>
+              <li role="presentation"><a href="javascript:void(0)">Last 15 days</a></li>
+              <li role="presentation"><a href="javascript:void(0)">Last 1 month</a></li>
+             </ul>
+            </li>
+           </div>
+          </div>
+         </div>
+         <div class="row report-config">
+          <li class="navbar-text txt-smallcaps chartselect-title">Chart: </li>
+          <li class="dropdown btn-group">
+            <button onclick="location.reload()" class="btn" aria-expanded="false" aria-haspopup="true" style="text-align: center;" type="button" id="chart-select">
+              Switch
+            </button>
+          </li>
+          <div class="btn-group float right" role="group">
+           <button id="heat-btn" class="btn btn-default">Submmit</button>
+          </div>
+         </div>
+         <div class="row">
+         <div class="container-fluid report-table-container">
+			
+		  <div id="chart-target">
+				<div class="thumbnail" >
+                <svg id="chart3"></svg>
+              </div>
+		  </div>
+
+          <table id="urlListTable" class="table table-bordered table-hover table-complex">
+           <thead>
+            <tr style="border-color: transparent;">
+             <th data-dimension="response.status" align="center">Sequential<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="request.method" align="center">Page Name<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="request.path" align="center">URL<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="request.host" align="center">Create time<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="time.avg" align="center">Update time<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="request.bodySize.avg" align="center">Status<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th data-dimension="response.bodySize.avg" align="center">Operation<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center">Log</th>
+            </tr>
+           </thead>
+          </table>
+          <div id="heatmapContainer" class="hidden"><iframe id="iframeCon" width="100%" height="9999" scrolling="no"></iframe>
+		  </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="offscreen" id="modal">
+     <h1 class="hidden"></h1>
+     <h3 class="hidden"></h3>
+     <p class="hidden"></p>
+     <div class="modal-btn-group">
+      <button class="btn btn-primary hidden"></button>
+      <button class="btn btn-default hidden"></button>
+      <button class="btn btn-default ghost hidden"></button>
+     </div>
+     <button class="btn btn-close hidden"><i class="fa fa-close"></i></button>
+    </section>
+    <section class="offscreen" id="getstarted-shield"></section>
+    <section data-status="continue" data-tab="quick" class="offscreen" id="getstarted">
+     <header class="gs clearfix">
+      <h3 class="float left">Getting Started</h3>
+      <div class="btn-group float right">
+       <button class="btn btn-default txt-smallcaps quick">Quick Start</button>
+       <button class="btn btn-default txt-smallcaps advanced">Advanced</button>
+      </div>
+     </header>
+     <article class="quick">
+      <h3>Populate your reports with sample data</h3>
+      <p class="explain">Get data into Mashape Analytics by sending a request through our cloud proxy.</p>
+      <div class="btn-wrap">
+       <button class="btn btn-primary ghost">Send sample data now</button>
+      </div>
+      <p class="note">Sending data to the </p>
+      <pre>default-environment</pre> environment. Not huxiaodong? 
+      <a href="">Click here to switch accounts.</a>
+      <p></p>
+      <p>We will send a sample request to Mockbin, routing it through HARchiver. For more information on how to send requests through our proxy, please take a look at our <a target="_blank" href="">documentation</a></p>
+     </article>
+     <article class="advanced">
+      <p class="explain">To support any tech stack we offer multiple options for getting data into Mashape Analytics:</p>
+      <p class="explain">Your App Service Token: </p>
+      <pre><span>55adbc329d6090290c65e35c</span></pre>
+      <p></p>
+      <div class="option-box clearfix">
+       <div class="option proxy">
+        <i class="fa fa-globe"></i>
+        <h4>Lightweight Proxy</h4>
+        <p>Send requests through the proxy to capture the entire request and response.</p>
+        <a target="_blank" href="">Learn More<i class="fa fa-chevron-right small"></i></a>
+       </div>
+       <div class="option agent">
+        <div class="icon-wrap plug">
+         <i class="fa fa-plug"></i>
+        </div>
+        <h4>Multi Language Agents</h4>
+        <p>Install and agent into your codebase to capture all of the required ALF data.</p>
+        <a target="_blank" href="">Learn More<i class="fa fa-chevron-right small"></i></a>
+       </div>
+       <div class="option api">
+        <div class="icon-wrap arrows">
+         <i class="fa fa-long-arrow-left"></i>
+         <i class="fa fa-long-arrow-right"></i>
+        </div>
+        <h4>API Reference</h4>
+        <p>Use the same APIs that the proxy and agents are built on top of for maximum flexibility</p>
+        <a target="_blank" href="">Learn More<i class="fa fa-chevron-right small"></i></a>
+       </div>
+      </div>
+     </article>
+     <footer class="gs">
+      <div class="footer-section click">
+       <i class="fa fa-spinner hidden"></i>
+       <strong>To begin: </strong>Click the button above to send sample data to Mashape Analytics.
+      </div>
+      <div class="footer-section waiting">
+       <i class="fa fa-spinner fa-spin"></i>
+       <strong>Status: </strong>Waiting for data to be received...
+      </div>
+      <div class="footer-section continue">
+       <i class="fa fa-check"></i>
+       <strong>Woohoo! </strong>We've recieved your data!
+       <div class="float right">
+        <a target="_blank" href="" class="txt-smallcaps">View Documentation</a>
+        <button class="btn btn-primary txt-smallcaps">Go to reports<i class="fa fa-chevron-right"></i></button>
+       </div>
+      </div>
+     </footer>
+    </section>
+   </section>
+  </section> 
+  <!-- End Footer --> 
+  <!-- Script Block -->
+  <script type="text/javascript" src="./app/build/jquery-2.1.3.js"></script>
+  <script type="text/javascript" src="./js/global.js"></script>
+  <script type="text/javascript" src="./app/d3/d3.js"></script>
+  <script type="text/javascript" src="./app/build/nv.d3.js"></script>
+  <script type="text/javascript" src="./app/build/bootstrap-datetimepicker.js"></script>
+  <script type="text/javascript" src="./app/js/stackedArea.js"></script>
+
+  <!-- End Script Block --> 
+ </body>
+</html>

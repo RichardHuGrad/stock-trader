@@ -1,0 +1,26 @@
+{"nodes":[
+{"name":"0 google 19.6k"},
+{"name":"1 google.com 14.3k"},
+{"name":"2 (direct) 5.36k"},
+{"name":"3 organic 7.7k"},
+{"name":"4 homepage 7.7k"},
+{"name":"5 order 2.3k"},
+{"name":"6 Category 3.3k"},
+{"name":"7 detail 1.1k"},
+{"name":"8 order1 0.3k"},
+{"name":"9 order2 1.3k"}
+],
+"links":[
+{"source":0,"target":4,"value":90},
+{"source":1,"target":4,"value":10},
+{"source":2,"target":4,"value":20},
+{"source":3,"target":4,"value":15},
+{"source":4,"target":5,"value":5},
+{"source":2,"target":6,"value":5},
+{"source":0,"target":7,"value":5},
+{"source":7,"target":5,"value":2},
+{"source":6,"target":5,"value":5},
+{"source":4,"target":8,"value":10},
+{"source":7,"target":9,"value":3},
+{"source":4,"target":9,"value":2}
+]}
