@@ -2,7 +2,7 @@
  <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>StockTrader Analytics</title> 
+  <title>Stocks Mystery</title> 
   <link rel="icon shortcut" type="image/x-icon" href="" /> 
   <!-- Schema.org markup for Google+ --> 
   <meta itemprop="name" content="StockTrader Analytics" />
@@ -18,6 +18,8 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <style type="text/css">
     .selectbox {
         -moz-border-bottom-colors: none;
@@ -188,48 +190,20 @@ style.firebugResetStyles {
       <div class="container-fluid">
        <div class="navbar-header">
         <img src="./images/westernLogoWhite.png" class="navbar-brand logo" style="height:50px;">
-		<a class="navbar-brand logo" href="#">StockTrader Analytics</a>
+		<a class="navbar-brand logo" href="#">Stocks Mystery</a>
        </div>
-       <div class="collapse navbar-collapse">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav navbar-right navbar-account">
-          <li><a href=""><i class="fa fa-question-circle"></i> SUPPORT</a></li>
-          <li><a target="_blank" href=""><i class="fa fa-tasks"></i> DOCS</a></li>
-          <li><a class="key clearfix" data-state="none" href="javascript:void(0)"><i class="fa fa-key"></i><span class="name"> APP KEY</span><input value="55adbc329d6090290c65e35c" class="token" type="text" /><i class="fa fa-close small float right token"></i></a></li>
-          <li class="circle-nav account dropdown"><a style="background-image: url(&quot;./images/4cd12d59601a17323322832c52d5fddc.jpg&quot;);" class="dropdown-toggle" target="_blank" href="javascript:void(0)" data-toggle="dropdown"></a>
-           <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a target="_blank" href="">Account Settings</a></li>
-            <li role="presentation"><a target="_blank" href="">Billing</a></li>
-            <li role="presentation"><a href="">Logout</a></li>
-           </ul></li>
-         </ul>
-        </div>
+       <div class="navbar-header navbar-right">
+       	<a class="navbar-brand logo" href="#">CS9864B Team A</a>
        </div>
       </div>
      </nav>
     </header>
     <section class="container-fluid" id="analytics-content">
      <div class="env-container container-fluid">
-      <div class="navbar navbar-default local-nav">
-       <div class="container-fluid">
-        <div class="nav navbar-nav">
-         <li class="dropdown complex"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="envSelect"><i class="fa fa-columns"></i> Default Environment<span class="caret float right"></span></button>
-          <ul class="dropdown-menu" role="menu">
-           <li role="presentation"><a href="" class="float left" tabindex="-1" role="menuitem">Default Environment<br/><span class="txt-label-small">Environment Bucket</span></a><button class="btn btn-default float right"><i class="fa fa-cog"></i></button></li>
-           <li class="divider" role="presentation"></li>
-           <li class="padding-min" role="presentation"><button class="btn btn-primary ghost">Create New Environment</button></li>
-          </ul></li>
-         <li class="active"><a href="">API Reports</a></li>
-         <li class=""><a href="">API Logs</a></li>
-        </div>
-        <div class="nav navbar-nav navbar-right"></div>
-       </div>
-      </div>
       <div class="reports-view container-fluid">
        <div class="report-sidebar">
         <ul class="sidebar">
          <li class="header">Reports</li>
-         <li class="new"><i class="fa fa-plus-circle"></i>New Report</li>
          <li class=""><a href="index.html"><i class="fa fa-bar-chart"></i>Stock Screener</a></li>
          <li class=""><a href="GTrendTracker.html"><i class="fa fa-pie-chart"></i>GTrend Tracker</a></li>
          <li class="active"><a href="PerformancePre.html"><i class="fa fa-area-chart"></i>Performance Prediction</a></li>
@@ -243,29 +217,9 @@ style.firebugResetStyles {
            <div class="txt-header-big inline">
             Performance Prediction
            </div>
-           <a href="" class="report-settings-button"><button class="btn"><i class="fa fa-cog"></i></button></a>
-           <span class="txt-label-small filters-enabled">0 filters enabled</span>
-           <div id="heatmapConfig" class="nav navbar-nav navbar-right pad-me hidden">
-            <li>
-              <div id="pickadate" class="input-group date form_date" style="width: 250px;" data-date="2015-07-01" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                <input class="form-control" size="8" type="text" value="" readonly>
-                <span class="input-group-addon"><span class="fa fa-remove"></span></span>
-                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-              </div>
-            </li>
-            <li class="navbar-text txt-smallcaps timeframe-title">timeframes: </li>
-            <li class="dropdown btn-group"><button class="btn" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="timeframe-select"><i class="fa fa-clock"></i>Last 24 Hours<span class="caret float right"></span></button>
-             <ul id="timeRange-select" class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-              <li role="presentation"><a href="javascript:void(0)">Last 3 days</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 7 days</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 15 days</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 month</a></li>
-             </ul>
-            </li>
-           </div>
           </div>
          </div>
-         <div class="row report-config">
+         <!-- <div class="row report-config">
           <li class="navbar-text txt-smallcaps chartselect-title">Chart: </li>
           <li class="dropdown btn-group">
             <button onclick="location.reload()" class="btn" aria-expanded="false" aria-haspopup="true" style="text-align: center;" type="button" id="chart-select">
@@ -275,33 +229,9 @@ style.firebugResetStyles {
           <div class="btn-group float right" role="group">
            <button id="heat-btn" class="btn btn-default">Submmit</button>
           </div>
-         </div>
+         </div> -->
          <div class="row">
-         <div class="container-fluid report-table-container">
-			
-		  <div id="chart-target">
-				<div class="thumbnail" >
-                <svg id="chart3"></svg>
-              </div>
-		  </div>
-
-          <table id="urlListTable" class="table table-bordered table-hover table-complex">
-           <thead>
-            <tr style="border-color: transparent;">
-             <th data-dimension="response.status" align="center">Sequential<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.method" align="center">Page Name<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.path" align="center">URL<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.host" align="center">Create time<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="time.avg" align="center">Update time<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.bodySize.avg" align="center">Status<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="response.bodySize.avg" align="center">Operation<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th align="center">Log</th>
-            </tr>
-           </thead>
-          </table>
-          <div id="heatmapContainer" class="hidden"><iframe id="iframeCon" width="100%" height="9999" scrolling="no"></iframe>
-		  </div>
-         </div>
+         <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
         </div>
        </div>
       </div>
@@ -398,8 +328,6 @@ style.firebugResetStyles {
   <script type="text/javascript" src="./app/d3/d3.js"></script>
   <script type="text/javascript" src="./app/build/nv.d3.js"></script>
   <script type="text/javascript" src="./app/build/bootstrap-datetimepicker.js"></script>
-  <script type="text/javascript" src="./app/js/stackedArea.js"></script>
-
-  <!-- End Script Block --> 
+  <script type="text/javascript" src="./app/js/performancePre.js"></script>
  </body>
 </html>

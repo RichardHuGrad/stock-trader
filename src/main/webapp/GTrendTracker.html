@@ -2,7 +2,7 @@
  <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>StockTrader Analytics</title> 
+  <title>Stocks Mystery</title> 
   <link rel="icon shortcut" type="image/x-icon" href="" /> 
   <!-- Schema.org markup for Google+ --> 
   <meta itemprop="name" content="StockTrader Analytics" />
@@ -160,48 +160,20 @@ style.firebugResetStyles {
       <div class="container-fluid">
        <div class="navbar-header">
         <img src="./images/westernLogoWhite.png" class="navbar-brand logo" style="height:50px;">
-		<a class="navbar-brand logo" href="#">StockTrader Analytics</a>
+		<a class="navbar-brand logo" href="#">Stocks Mystery</a>
        </div>
-       <div class="collapse navbar-collapse">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav navbar-right navbar-account">
-          <li><a href=""><i class="fa fa-question-circle"></i> SUPPORT</a></li>
-          <li><a target="_blank" href=""><i class="fa fa-tasks"></i> DOCS</a></li>
-          <li><a class="key clearfix" data-state="none" href="javascript:void(0)"><i class="fa fa-key"></i><span class="name"> APP KEY</span><input value="55adbc329d6090290c65e35c" class="token" type="text" /><i class="fa fa-close small float right token"></i></a></li>
-          <li class="circle-nav account dropdown"><a style="background-image: url(&quot;./images/4cd12d59601a17323322832c52d5fddc.jpg&quot;);" class="dropdown-toggle" target="_blank" href="javascript:void(0)" data-toggle="dropdown"></a>
-           <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a target="_blank" href="">Account Settings</a></li>
-            <li role="presentation"><a target="_blank" href="">Billing</a></li>
-            <li role="presentation"><a href="">Logout</a></li>
-           </ul></li>
-         </ul>
-        </div>
+       <div class="navbar-header navbar-right">
+       	<a class="navbar-brand logo" href="#">CS9864B Team A</a>
        </div>
       </div>
      </nav>
     </header>
     <section class="container-fluid" id="analytics-content">
      <div class="env-container container-fluid">
-      <div class="navbar navbar-default local-nav">
-       <div class="container-fluid">
-        <div class="nav navbar-nav">
-         <li class="dropdown complex"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="envSelect"><i class="fa fa-columns"></i> Default Environment<span class="caret float right"></span></button>
-          <ul class="dropdown-menu" role="menu">
-           <li role="presentation"><a href="" class="float left" tabindex="-1" role="menuitem">Default Environment<br/><span class="txt-label-small">Environment Bucket</span></a><button class="btn btn-default float right"><i class="fa fa-cog"></i></button></li>
-           <li class="divider" role="presentation"></li>
-           <li class="padding-min" role="presentation"><button class="btn btn-primary ghost">Create New Environment</button></li>
-          </ul></li>
-         <li class="active"><a href="">API Reports</a></li>
-         <li class=""><a href="">API Logs</a></li>
-        </div>
-        <div class="nav navbar-nav navbar-right"></div>
-       </div>
-      </div>
       <div class="reports-view container-fluid">
        <div class="report-sidebar">
         <ul class="sidebar">
          <li class="header">Reports</li>
-         <li class="new"><i class="fa fa-plus-circle"></i>New Report</li>
          <li class=""><a href="index.html"><i class="fa fa-bar-chart"></i>Stock Screener</li>
          <li class="active"><a href="GTrendTracker.html"><i class="fa fa-pie-chart"></i>GTrend Tracker</a></li>
          <li class=""><a href="PerformancePre.html"><i class="fa fa-area-chart"></i>Performance Prediction</a></li>
@@ -215,42 +187,14 @@ style.firebugResetStyles {
            <div class="txt-header-big inline">
             GTrend Tracker
            </div>
-           <a href="" class="report-settings-button"><button class="btn"><i class="fa fa-cog"></i></button></a>
-           <span class="txt-label-small filters-enabled">0 filters enabled</span>
            <div class="nav navbar-nav navbar-right pad-me">
-            <li class="navbar-text txt-smallcaps timeframe-title">timeframes: </li>
-            <li class="dropdown btn-group"><button class="btn" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="timeframe-select"><i class="fa fa-clock"></i>Last 24 Hours<span class="caret float right"></span></button>
-             <ul class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-              <li role="presentation"><a href="javascript:void(0)">Last 5 min</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 hour</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 24 hours</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 3 days</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 week</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 month</a></li>
-             </ul></li>
+            <li class="navbar-text txt-smallcaps timeframe-title">timeframes: Every 5 Seconds</li>
            </div>
           </div>
          </div>
-         <div class="row report-config">
-          <li class="navbar-text txt-smallcaps chartselect-title">Chart: </li>
-          <li class="dropdown btn-group">
-            <button class="btn" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="chart-select">
-              Chart
-              <span class="caret float right"></span>
-            </button>
-           <ul id="visualize-chart" class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-            <li role="presentation"><a href="javascript:void(0)">Polyline</a></li>
-            <li role="presentation"><a href="javascript:void(0)">Pie</a></li>
-            <li role="presentation"><a href="javascript:void(0)">Area</a></li>
-            <li role="presentation"><a href="javascript:void(0)">Strip</a></li>
-           </ul>
-         </li>
-          <div class="btn-group float right" role="group">
-           <button class="btn btn-default active">Hours</button>
-          </div>
-         </div>
          <div class="row">
-          <div class="chart-container container-fluid">
+         <iframe src="https://mystery-gts.mybluemix.net/" style="width: 100%; height: 70%;"></iframe>
+          <!-- <div class="chart-container container-fluid">
            <div class="container-fluid hidden" id="chart-placeholder">
             <span>No data found for the requested timeframe.</span>
            </div>
@@ -290,9 +234,9 @@ style.firebugResetStyles {
              </table>
             </div>
            </div>
-          </div>
+          </div> -->
          </div>
-         <div class="container-fluid report-table-container">
+         <!-- <div class="container-fluid report-table-container">
           <table class="table table-bordered table-hover table-complex">
            <thead>
             <tr style="border-color: transparent;">
@@ -386,7 +330,7 @@ style.firebugResetStyles {
             </tr>
            </tbody>
           </table>
-         </div>
+         </div> -->
         </div>
        </div>
       </div>

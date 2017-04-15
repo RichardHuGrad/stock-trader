@@ -2,7 +2,7 @@
  <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>StockTrader Analytics</title> 
+  <title>Stocks Mystery</title> 
   <link rel="icon shortcut" type="image/x-icon" href="" /> 
   <!-- Schema.org markup for Google+ --> 
   <meta itemprop="name" content="StockTrader Analytics" />
@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./app/css/nv.d3.css" />
   <link rel="stylesheet" href="./app/css/font-awesome.min.css" >
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <!-- <script src="http://localhost:35729/livereload.js?snipver=1"></script> --> 
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -208,48 +210,20 @@ style.firebugResetStyles {
       <div class="container-fluid">
        <div class="navbar-header">
         <img src="./images/westernLogoWhite.png" class="navbar-brand logo" style="height:50px;">
-		<a class="navbar-brand logo" href="#">StockTrader Analytics</a>
+		<a class="navbar-brand logo" href="#">Stocks Mystery</a>
        </div>
-       <div class="collapse navbar-collapse">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav navbar-right navbar-account">
-          <li><a href=""><i class="fa fa-question-circle"></i> SUPPORT</a></li>
-          <li><a target="_blank" href=""><i class="fa fa-tasks"></i> DOCS</a></li>
-          <li><a class="key clearfix" data-state="none" href="javascript:void(0)"><i class="fa fa-key"></i><span class="name"> APP KEY</span><input value="55adbc329d6090290c65e35c" class="token" type="text" /><i class="fa fa-close small float right token"></i></a></li>
-          <li class="circle-nav account dropdown"><a style="background-image: url(&quot;./images/4cd12d59601a17323322832c52d5fddc.jpg&quot;);" class="dropdown-toggle" target="_blank" href="javascript:void(0)" data-toggle="dropdown"></a>
-           <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a target="_blank" href="">Account Settings</a></li>
-            <li role="presentation"><a target="_blank" href="">Billing</a></li>
-            <li role="presentation"><a href="">Logout</a></li>
-           </ul></li>
-         </ul>
-        </div>
+       <div class="navbar-header navbar-right">
+       	<a class="navbar-brand logo" href="#">CS9864B Team A</a>
        </div>
       </div>
      </nav>
     </header>
     <section class="container-fluid" id="analytics-content">
      <div class="env-container container-fluid">
-      <div class="navbar navbar-default local-nav">
-       <div class="container-fluid">
-        <div class="nav navbar-nav">
-         <li class="dropdown complex"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="envSelect"><i class="fa fa-columns"></i> Default Environment<span class="caret float right"></span></button>
-          <ul class="dropdown-menu" role="menu">
-           <li role="presentation"><a href="" class="float left" tabindex="-1" role="menuitem">Default Environment<br/><span class="txt-label-small">Environment Bucket</span></a><button class="btn btn-default float right"><i class="fa fa-cog"></i></button></li>
-           <li class="divider" role="presentation"></li>
-           <li class="padding-min" role="presentation"><button class="btn btn-primary ghost">Create New Environment</button></li>
-          </ul></li>
-         <li class="active"><a href="">API Reports</a></li>
-         <li class=""><a href="">API Logs</a></li>
-        </div>
-        <div class="nav navbar-nav navbar-right"></div>
-       </div>
-      </div>
       <div class="reports-view container-fluid">
        <div class="report-sidebar">
         <ul class="sidebar">
          <li class="header">Reports</li>
-         <li class="new"><i class="fa fa-plus-circle"></i>New Report</li>
          <li class=""><a href="index.html"><i class="fa fa-bar-chart"></i>Stock Screener</a></li>
          <li class=""><a href="GTrendTracker.html"><i class="fa fa-pie-chart"></i>GTrend Tracker</a></li>
          <li class=""><a href="PerformancePre.html"><i class="fa fa-area-chart"></i>Performance Prediction</a></li>
@@ -263,31 +237,6 @@ style.firebugResetStyles {
            <div class="txt-header-big inline">
             Stock-Trend Analytics
            </div>
-           <a href="" class="report-settings-button"><button class="btn"><i class="fa fa-cog"></i></button></a>
-           <span class="txt-label-small filters-enabled">0 filters enabled</span>
-           <div class="nav navbar-nav navbar-right pad-me">
-            <li class="navbar-text txt-smallcaps timeframe-title">timeframes: </li>
-            <li class="dropdown btn-group"><button class="btn" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="timeframe-select"><i class="fa fa-clock"></i>Last 24 Hours<span class="caret float right"></span></button>
-             <ul class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-              <li role="presentation"><a href="javascript:void(0)">Last 5 min</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 hour</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 24 hours</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 3 days</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 week</a></li>
-              <li role="presentation"><a href="javascript:void(0)">Last 1 month</a></li>
-             </ul></li>
-           </div>
-          </div>
-         </div>
-         <div class="row report-config">
-          <li class="navbar-text txt-smallcaps chartselect-title">Chart: </li>
-          <li class="dropdown btn-group">
-            <button class="btn" aria-expanded="false" aria-haspopup="true" style="text-align: center;" type="button" id="chart-select">
-              Switch
-            </button>
-         </li>
-          <div class="btn-group float right" role="group">
-           <button class="btn btn-default active">Hours</button>
           </div>
          </div>
          <div class="row">
@@ -295,11 +244,11 @@ style.firebugResetStyles {
            <div class="container-fluid hidden" id="chart-placeholder">
             <span>No data found for the requested timeframe.</span>
            </div>
-
-           <div id="chart-target" class="container-fliud" style="position: relative; text-align: center;">
+           <!-- <div id="chart-target" class="container-fliud" style="position: relative; text-align: center;">
               <div id="chart">
               </div>
-           </div>
+           </div> -->
+           <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
            <div style="position: relative;" class="container-fluid c3" id="chart-target">
             <div style="position: absolute; pointer-events: none; display: none; top: 18.1333px; left: 1266.5px;" class="c3-tooltip-container">
@@ -333,101 +282,6 @@ style.firebugResetStyles {
             </div>
            </div>
           </div>
-         </div>
-         <div class="container-fluid report-table-container">
-          <table class="table table-bordered table-hover table-complex">
-           <thead>
-            <tr style="border-color: transparent;">
-             <th data-dimension="response.status" align="center">Code<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.method" align="center">Method<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.host" align="center">Host<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.path" align="center">Path<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="time.avg" align="center">Latency Avg<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.bodySize.avg" align="center">Request Size Avg<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="response.bodySize.avg" align="center">Response Size Avg<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="count" align="center">Calls<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th align="center">Log</th>
-            </tr>
-           </thead>
-           <tbody>
-            <tr style="border-color: transparent;" class="row-visible">
-             <td data-status="2" class="txt-smallcaps-light" align="center">200</td>
-             <td class="txt-smallcaps-light" align="center">GET</td>
-             <td>mockbin.com</td>
-             <td>/har/hello/world</td>
-             <td align="right">100 ms</td>
-             <td align="right">0 </td>
-             <td align="right">0 </td>
-             <td align="right">2 </td>
-             <td align="center"><i class="fa fa-search"></i></td>
-            </tr>
-            <tr style="border-color: transparent;" class="row-visible">
-             <td data-status="2" class="txt-smallcaps-light" align="center">200</td>
-             <td class="txt-smallcaps-light" align="center">GET</td>
-             <td>mockbin.com</td>
-             <td>/har/bonjour/monde</td>
-             <td align="right">100 ms</td>
-             <td align="right">0 </td>
-             <td align="right">0 </td>
-             <td align="right">1 </td>
-             <td align="center"><i class="fa fa-search"></i></td>
-            </tr>
-            <tr style="border-color: transparent;" class="row-visible">
-             <td data-status="2" class="txt-smallcaps-light" align="center">200</td>
-             <td class="txt-smallcaps-light" align="center">POST</td>
-             <td>mockbin.com</td>
-             <td>/har/hello/world</td>
-             <td align="right">100 ms</td>
-             <td align="right">0 </td>
-             <td align="right">0 </td>
-             <td align="right">1 </td>
-             <td align="center"><i class="fa fa-search"></i></td>
-            </tr>
-            <tr style="border-color: transparent;" class="row-visible">
-             <td data-status="2" class="txt-smallcaps-light" align="center">200</td>
-             <td class="txt-smallcaps-light" align="center">POST</td>
-             <td>mockbin.com</td>
-             <td>/har/hola/mundo</td>
-             <td align="right">100 ms</td>
-             <td align="right">0 </td>
-             <td align="right">0 </td>
-             <td align="right">1 </td>
-             <td align="center"><i class="fa fa-search"></i></td>
-            </tr>
-            <tr style="border-color: transparent;" class="row-visible">
-             <td data-status="2" class="txt-smallcaps-light" align="center">200</td>
-             <td class="txt-smallcaps-light" align="center">PUT</td>
-             <td>mockbin.com</td>
-             <td>/har/hallo/Welt</td>
-             <td align="right">100 ms</td>
-             <td align="right">0 </td>
-             <td align="right">0 </td>
-             <td align="right">1 </td>
-             <td align="center"><i class="fa fa-search"></i></td>
-            </tr>
-            <tr style="border-color: transparent;" class="row-visible paginator">
-             <td class="results-select-cell" colspan="9"><li class="dropdown btn-group dropup"><button class="btn btn-default btn-small" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="pagecount-select">Show 10 Results<span class="caret float right"></span></button>
-               <ul class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-                <li role="presentation"><a href="javascript:void(0)">5 results/page</a></li>
-                <li role="presentation"><a href="javascript:void(0)">10 results/page</a></li>
-                <li role="presentation"><a href="javascript:void(0)">20 results/page</a></li>
-                <li role="presentation"><a href="javascript:void(0)">30 results/page</a></li>
-               </ul></li>
-              <div class="pager float right">
-               Go to 
-               <li class="dropdown btn-group dropup"><button class="btn btn-default btn-small" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button" id="pagecount-select">1<span class="caret float right"></span></button>
-                <ul class="dropdown-menu" aria-labelledby="dLabel" role="menu">
-                 <li role="presentation"><a href="javascript:void(0)">1</a></li>
-                </ul></li>
-               <span class="allPages"> of 1</span>
-               <div class="btn-group btn-group-sm float right pager-btn-group" aria-label="..." role="group">
-                <button class="btn btn-default disabled"><i class="fa fa-caret-left"></i></button>
-                <button class="btn btn-default disabled"><i class="fa fa-caret-right"></i></button>
-               </div>
-              </div></td>
-            </tr>
-           </tbody>
-          </table>
          </div>
         </div>
        </div>
@@ -524,8 +378,99 @@ style.firebugResetStyles {
   <script type="text/javascript" src="./js/global.js"></script>
   <script type="text/javascript" src="./js/handle.js"></script>
   <script type="text/javascript" src="./app/d3/d3.js"></script>
-  <script src="./app/js/sankey_dev.js"></script>
-  <script src="./app/js/funneldraw.js"></script>
   <!-- End Script Block --> 
+
+  <script type="text/javascript">
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open( "GET", 'https://api.mlab.com/api/1/databases/stockdata-daily/collections/a?s={%22_id%22:1}&sk=3000&l=500&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1', false ); // false for synchronous request
+	xmlHttp.send( null );
+	
+	var a = JSON.parse(xmlHttp.responseText);
+	
+	var category = [];
+	var closeData = [];
+	var averData = [];
+	
+	for (var i = 0; i < a.length; i++){
+		category.push(a[i].Date);
+		closeData.push(a[i].Close);
+		averData.push(a[i].Close / 2);
+	}
+	
+	//Drawing
+    Highcharts.chart('container', {
+      chart: {
+          zoomType: 'xy'
+      },
+      title: {
+          text: 'Average Stock Price of Stock Market'
+      },
+      subtitle: {
+          text: 'Source: Stocks Mystery'
+      },
+      xAxis: [{
+          categories: category,
+          crosshair: true
+      }],
+      yAxis: [{ // Primary yAxis
+          labels: {
+              format: '$ {value}',
+              style: {
+                  color: Highcharts.getOptions().colors[1]
+              }
+          },
+          title: {
+              text: 'Average Price',
+              style: {
+                  color: Highcharts.getOptions().colors[1]
+              }
+          }
+      }, { // Secondary yAxis
+          title: {
+              text: 'Stock Price',
+              style: {
+                  color: Highcharts.getOptions().colors[0]
+              }
+          },
+          labels: {
+              format: '$ {value}',
+              style: {
+                  color: Highcharts.getOptions().colors[0]
+              }
+          },
+          opposite: true
+      }],
+      tooltip: {
+          shared: true
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'left',
+          x: 120,
+          verticalAlign: 'top',
+          y: 100,
+          floating: true,
+          backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+      },
+      series: [{
+          name: 'Stock Price',
+          type: 'column',
+          yAxis: 1,
+          data: closeData,
+          tooltip: {
+              valueSuffix: '$ '
+          }
+
+      }, {
+          name: 'Average Price',
+          type: 'spline',
+          data: averData,
+          tooltip: {
+              valueSuffix: '$ '
+          }
+      }]
+  });
+  </script>>
+
  </body>
 </html>

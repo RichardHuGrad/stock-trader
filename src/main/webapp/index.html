@@ -2,7 +2,7 @@
  <head> 
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> 
   <meta charset="utf-8" /> 
-  <title>StockTrader Analytics</title> 
+  <title>Stocks Mystery</title>
   <link rel="icon shortcut" type="image/x-icon" href="" /> 
   <!-- Schema.org markup for Google+ --> 
   <meta itemprop="name" content="StockTrader Analytics" />
@@ -163,49 +163,21 @@ style.firebugResetStyles {
       <div class="container-fluid">
        <div class="navbar-header">
         <img src="./images/westernLogoWhite.png" class="navbar-brand logo" style="height:50px;">
-		<a class="navbar-brand logo" href="#">StockTrader Analytics</a>
+		<a class="navbar-brand logo" href="#">Stocks Mystery</a>
        </div>
-       <div class="collapse navbar-collapse">
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-         <ul class="nav navbar-nav navbar-right navbar-account">
-          <li><a href=""><i class="fa fa-question-circle"></i> SUPPORT</a></li>
-          <li><a target="_blank" href=""><i class="fa fa-tasks"></i> DOCS</a></li>
-          <li><a class="key clearfix" data-state="none" href="javascript:void(0)"><i class="fa fa-key"></i><span class="name"> APP KEY</span><input value="55adbc329d6090290c65e35c" class="token" type="text" /><i class="fa fa-close small float right token"></i></a></li>
-          <li class="circle-nav account dropdown"><a style="background-image: url(&quot;./images/4cd12d59601a17323322832c52d5fddc.jpg&quot;);" class="dropdown-toggle" target="_blank" href="javascript:void(0)" data-toggle="dropdown"></a>
-           <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a target="_blank" href="">Account Settings</a></li>
-            <li role="presentation"><a target="_blank" href="">Billing</a></li>
-            <li role="presentation"><a href="">Logout</a></li>
-           </ul></li>
-         </ul>
-        </div>
+       <div class="navbar-header navbar-right">
+       	<a class="navbar-brand logo" href="#">CS9864B Team A</a>
        </div>
       </div>
      </nav>
     </header>
     <section class="container-fluid" id="analytics-content">
      <div class="env-container container-fluid">
-      <div class="navbar navbar-default local-nav">
-       <div class="container-fluid">
-        <div class="nav navbar-nav">
-         <li class="dropdown complex"><button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" id="envSelect"><i class="fa fa-columns"></i> Default Environment<span class="caret float right"></span></button>
-          <ul class="dropdown-menu" role="menu">
-           <li role="presentation"><a href="" class="float left" tabindex="-1" role="menuitem">Default Environment<br/><span class="txt-label-small">Environment Bucket</span></a><button class="btn btn-default float right"><i class="fa fa-cog"></i></button></li>
-           <li class="divider" role="presentation"></li>
-           <li class="padding-min" role="presentation"><button class="btn btn-primary ghost">Create New Environment</button></li>
-          </ul></li>
-         <li class="active"><a href="">API Reports</a></li>
-         <li class=""><a href="">API Logs</a></li>
-        </div>
-        <div class="nav navbar-nav navbar-right"></div>
-       </div>
-      </div>
       <div class="reports-view container-fluid">
        <div class="report-sidebar">
         <ul class="sidebar">
          <li class="header">Reports</li>
-         <li class="new"><i class="fa fa-plus-circle"></i>New Report</li>
-         <li class="active"><a href="StockScreener.html"><i class="fa fa-bar-chart"></i>Stock Screener</a></li>
+         <li class="active"><a href="index.html"><i class="fa fa-bar-chart"></i>Stock Screener</a></li>
          <li class=""><a href="GTrendTracker.html"><i class="fa fa-pie-chart"></i>GTrend Tracker</li>
          <li class=""><a href="PerformancePre.html"><i class="fa fa-area-chart"></i>Performance Prediction</a></li>
          <li class=""><a href="StockTrendAnaly.html"><i class="fa fa-line-chart"></i>Stock-Trend Analytics</a></li>
@@ -218,21 +190,6 @@ style.firebugResetStyles {
            <div class="txt-header-big inline">
             Stock Screener
            </div>
-           <a href="" class="report-settings-button"><button class="btn"><i class="fa fa-cog"></i></button></a>
-           <span class="txt-label-small filters-enabled">0 filters enabled</span>
-           <div class="nav navbar-nav navbar-right pad-me">
-           </div>
-          </div>
-         </div>
-         <div class="row report-config">
-          <li class="navbar-text txt-smallcaps chartselect-title">Chart: </li>
-          <li class="dropdown btn-group">
-            <button class="btn" aria-expanded="false" aria-haspopup="true" style="text-align: center;" type="button" id="chart-select">
-              Historical Records
-            </button>
-         </li>
-          <div class="btn-group float right" role="group">
-           <button class="btn btn-default active">Hours</button>
           </div>
          </div>
          <div class="row">
@@ -276,14 +233,13 @@ style.firebugResetStyles {
           <table class="table table-bordered table-hover table-complex">
            <thead>
             <tr style="border-color: transparent;">
-             <th data-dimension="response.status" align="center">ID<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="response.status" align="center">Time<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.method" align="center">Price<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.host" align="center">Size<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.path" align="center">Exchange<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="request.host" align="center">Suspicious<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th data-dimension="time.avg" align="center">P/E ratio<span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
-             <th align="center">Log</th>
+             <th align="center"><a onclick="SortID()">Symbol</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="SortTime()">Time</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="SortPrice()">Price</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="SortSize()">Size</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="">Exchange</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="">Suspicious</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
+             <th align="center"><a onclick="">P/E Ratio</a><span class="sort-group"><i class="fa fa-caret-up disabled"></i><i class="fa fa-caret-down disabled"></i></span></th>
             </tr>
            </thead>
            <tbody id="stocktable">
@@ -409,6 +365,252 @@ style.firebugResetStyles {
   <!-- <script src="./app/js/liquidFillGauge.js"></script> -->
     <script>
 
+        function SortID(){
+            $("table")[1].childNodes[1].children[0].children[0];
+            
+            $('#stocktable').empty();
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", 'https://api.mlab.com/api/1/databases/stock-data/collections/aa?s={%22_id%22:1}&sk=0&l=10&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1', false ); // false for synchronous request
+            xmlHttp.send( null );
+            //console.log(xmlHttp.responseText);
+            var a = JSON.parse(xmlHttp.responseText);
+
+            for (var i = 0; i < a.length; i++){
+                var para = document.createElement("tr");
+                para.setAttribute("style", "border-color: transparent;");
+                para.setAttribute("class", "row-visible");
+              
+                var child1 = document.createElement("td");
+                child1.setAttribute("data-status", "2");
+                child1.setAttribute("class", "txt-smallcaps-light");
+                child1.setAttribute("align", "center");
+                child1.innerHTML = a[i].Name;
+
+                var child2 = document.createElement("td");
+                child2.setAttribute("class", "txt-smallcaps-light");
+                child2.setAttribute("align", "center");
+                child2.innerHTML = UnixTimetoDate(a[i].Time);
+
+                var child3 = document.createElement("td");
+                child3.setAttribute("align", "center");
+                child3.innerHTML = '$' + a[i].Price;
+
+                var child4 = document.createElement("td");
+                child4.setAttribute("align", "center");
+                child4.innerHTML = a[i].Size;
+
+                var child5 = document.createElement("td");
+                child5.setAttribute("align", "center");
+                child5.innerHTML = a[i].Exchange;
+
+                var child6 = document.createElement("td");
+                child6.setAttribute("align", "center");
+                child6.innerHTML = a[i].Suspicious;
+
+                var child7 = document.createElement("td");
+                child7.setAttribute("align", "center");
+                child7.innerHTML = parseInt(a[i].Price / a[i].Size);
+
+                
+
+                para.appendChild(child1);
+                para.appendChild(child2);
+                para.appendChild(child3);
+                para.appendChild(child4);
+                para.appendChild(child5);
+                para.appendChild(child6);
+                para.appendChild(child7);
+
+                $('tbody')[1].appendChild(para);
+            };
+        }
+
+        function SortTime(){
+            $("table")[1].childNodes[1].children[0].children[1];
+            
+            $('#stocktable').empty();
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", 'https://api.mlab.com/api/1/databases/stock-data/collections/aa?s={%22Time%22:1}&sk=0&l=10&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1', false ); // false for synchronous request
+            xmlHttp.send( null );
+            //console.log(xmlHttp.responseText);
+            var a = JSON.parse(xmlHttp.responseText);
+
+            for (var i = 0; i < a.length; i++){
+                var para = document.createElement("tr");
+                para.setAttribute("style", "border-color: transparent;");
+                para.setAttribute("class", "row-visible");
+              
+                var child1 = document.createElement("td");
+                child1.setAttribute("data-status", "2");
+                child1.setAttribute("class", "txt-smallcaps-light");
+                child1.setAttribute("align", "center");
+                child1.innerHTML = a[i].Name;
+
+                var child2 = document.createElement("td");
+                child2.setAttribute("class", "txt-smallcaps-light");
+                child2.setAttribute("align", "center");
+                child2.innerHTML = UnixTimetoDate(a[i].Time);
+
+                var child3 = document.createElement("td");
+                child3.setAttribute("align", "center");
+                child3.innerHTML = '$' + a[i].Price;
+
+                var child4 = document.createElement("td");
+                child4.setAttribute("align", "center");
+                child4.innerHTML = a[i].Size;
+
+                var child5 = document.createElement("td");
+                child5.setAttribute("align", "center");
+                child5.innerHTML = a[i].Exchange;
+
+                var child6 = document.createElement("td");
+                child6.setAttribute("align", "center");
+                child6.innerHTML = a[i].Suspicious;
+
+                var child7 = document.createElement("td");
+                child7.setAttribute("align", "center");
+                child7.innerHTML = parseInt(a[i].Price / a[i].Size);
+
+               
+
+                para.appendChild(child1);
+                para.appendChild(child2);
+                para.appendChild(child3);
+                para.appendChild(child4);
+                para.appendChild(child5);
+                para.appendChild(child6);
+                para.appendChild(child7);    
+
+                $('tbody')[1].appendChild(para);
+            };
+        }
+        
+        function SortPrice(){
+            $("table")[1].childNodes[1].children[0].children[2];
+            
+            $('#stocktable').empty();
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", 'https://api.mlab.com/api/1/databases/stock-data/collections/aa?s={%22Price%22:1}&sk=0&l=10&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1', false ); // false for synchronous request
+            xmlHttp.send( null );
+            //console.log(xmlHttp.responseText);
+            var a = JSON.parse(xmlHttp.responseText);
+
+            for (var i = 0; i < a.length; i++){
+                var para = document.createElement("tr");
+                para.setAttribute("style", "border-color: transparent;");
+                para.setAttribute("class", "row-visible");
+              
+                var child1 = document.createElement("td");
+                child1.setAttribute("data-status", "2");
+                child1.setAttribute("class", "txt-smallcaps-light");
+                child1.setAttribute("align", "center");
+                child1.innerHTML = a[i].Name;
+
+                var child2 = document.createElement("td");
+                child2.setAttribute("class", "txt-smallcaps-light");
+                child2.setAttribute("align", "center");
+                child2.innerHTML = UnixTimetoDate(a[i].Time);
+
+                var child3 = document.createElement("td");
+                child3.setAttribute("align", "center");
+                child3.innerHTML = '$' + a[i].Price;
+
+                var child4 = document.createElement("td");
+                child4.setAttribute("align", "center");
+                child4.innerHTML = a[i].Size;
+
+                var child5 = document.createElement("td");
+                child5.setAttribute("align", "center");
+                child5.innerHTML = a[i].Exchange;
+
+                var child6 = document.createElement("td");
+                child6.setAttribute("align", "center");
+                child6.innerHTML = a[i].Suspicious;
+
+                var child7 = document.createElement("td");
+                child7.setAttribute("align", "center");
+                child7.innerHTML = parseInt(a[i].Price / a[i].Size);
+
+                
+
+                para.appendChild(child1);
+                para.appendChild(child2);
+                para.appendChild(child3);
+                para.appendChild(child4);
+                para.appendChild(child5);
+                para.appendChild(child6);
+                para.appendChild(child7);
+                
+
+                $('tbody')[1].appendChild(para);
+            };
+        }
+
+        function SortSize(){
+            $("table")[1].childNodes[1].children[0].children[3];
+            
+            $('#stocktable').empty();
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open( "GET", 'https://api.mlab.com/api/1/databases/stock-data/collections/aa?s={%22Size%22:1}&sk=0&l=10&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1', false ); // false for synchronous request
+            xmlHttp.send( null );
+            //console.log(xmlHttp.responseText);
+            var a = JSON.parse(xmlHttp.responseText);
+
+            for (var i = 0; i < a.length; i++){
+                var para = document.createElement("tr");
+                para.setAttribute("style", "border-color: transparent;");
+                para.setAttribute("class", "row-visible");
+              
+                var child1 = document.createElement("td");
+                child1.setAttribute("data-status", "2");
+                child1.setAttribute("class", "txt-smallcaps-light");
+                child1.setAttribute("align", "center");
+                child1.innerHTML = a[i].Name;
+
+                var child2 = document.createElement("td");
+                child2.setAttribute("class", "txt-smallcaps-light");
+                child2.setAttribute("align", "center");
+                child2.innerHTML = UnixTimetoDate(a[i].Time);
+
+                var child3 = document.createElement("td");
+                child3.setAttribute("align", "center");
+                child3.innerHTML = '$' + a[i].Price;
+
+                var child4 = document.createElement("td");
+                child4.setAttribute("align", "center");
+                child4.innerHTML = a[i].Size;
+
+                var child5 = document.createElement("td");
+                child5.setAttribute("align", "center");
+                child5.innerHTML = a[i].Exchange;
+
+                var child6 = document.createElement("td");
+                child6.setAttribute("align", "center");
+                child6.innerHTML = a[i].Suspicious;
+
+                var child7 = document.createElement("td");
+                child7.setAttribute("align", "center");
+                child7.innerHTML = parseInt(a[i].Price / a[i].Size);
+
+                
+
+                para.appendChild(child1);
+                para.appendChild(child2);
+                para.appendChild(child3);
+                para.appendChild(child4);
+                para.appendChild(child5);
+                para.appendChild(child6);
+                para.appendChild(child7);
+                
+
+                $('tbody')[1].appendChild(para);
+            };
+        }
+
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.open( "GET", "https://api.mlab.com/api/1/databases/stock-data/collections/aa?s={%22_id%22:1}&sk=0&l=10&apiKey=3qyLsr9-pCvIhWM6vUda65-ZHzEZQXA1", false ); // false for synchronous request
         xmlHttp.send( null );
@@ -439,7 +641,7 @@ style.firebugResetStyles {
             child1.setAttribute("data-status", "2");
             child1.setAttribute("class", "txt-smallcaps-light");
             child1.setAttribute("align", "center");
-            child1.innerHTML = a[i]._id.$oid;
+            child1.innerHTML = a[i].Name;
 
             var child2 = document.createElement("td");
             child2.setAttribute("class", "txt-smallcaps-light");
@@ -466,11 +668,7 @@ style.firebugResetStyles {
             child7.setAttribute("align", "center");
             child7.innerHTML = parseInt(a[i].Price / a[i].Size);
 
-            var child8 = document.createElement("td");
-            var q = document.createElement("i");
-            child8.setAttribute("align", "center");
-            q.setAttribute("class", "fa fa-search");
-            child8.appendChild(q);
+           
 
             para.appendChild(child1);
             para.appendChild(child2);
@@ -479,7 +677,7 @@ style.firebugResetStyles {
             para.appendChild(child5);
             para.appendChild(child6);
             para.appendChild(child7);
-            para.appendChild(child8);      
+             
 
             $('tbody')[1].appendChild(para);
         }
@@ -504,7 +702,7 @@ style.firebugResetStyles {
                 child1.setAttribute("data-status", "2");
                 child1.setAttribute("class", "txt-smallcaps-light");
                 child1.setAttribute("align", "center");
-                child1.innerHTML = a[i]._id.$oid;
+                child1.innerHTML = a[i].Name;
 
                 var child2 = document.createElement("td");
                 child2.setAttribute("class", "txt-smallcaps-light");
@@ -531,11 +729,7 @@ style.firebugResetStyles {
                 child7.setAttribute("align", "center");
                 child7.innerHTML = parseInt(a[i].Price / a[i].Size);
 
-                var child8 = document.createElement("td");
-                var q = document.createElement("i");
-                child8.setAttribute("align", "center");
-                q.setAttribute("class", "fa fa-search");
-                child8.appendChild(q);
+                
 
                 para.appendChild(child1);
                 para.appendChild(child2);
@@ -544,7 +738,7 @@ style.firebugResetStyles {
                 para.appendChild(child5);
                 para.appendChild(child6);
                 para.appendChild(child7);
-                para.appendChild(child8);      
+                
 
                 $('tbody')[1].appendChild(para);
             }
@@ -570,7 +764,7 @@ style.firebugResetStyles {
                 child1.setAttribute("data-status", "2");
                 child1.setAttribute("class", "txt-smallcaps-light");
                 child1.setAttribute("align", "center");
-                child1.innerHTML = a[i]._id.$oid;
+                child1.innerHTML = a[i].Name;
 
                 var child2 = document.createElement("td");
                 child2.setAttribute("class", "txt-smallcaps-light");
@@ -597,11 +791,7 @@ style.firebugResetStyles {
                 child7.setAttribute("align", "center");
                 child7.innerHTML = parseInt(a[i].Price / a[i].Size);
 
-                var child8 = document.createElement("td");
-                var q = document.createElement("i");
-                child8.setAttribute("align", "center");
-                q.setAttribute("class", "fa fa-search");
-                child8.appendChild(q);
+                
 
                 para.appendChild(child1);
                 para.appendChild(child2);
@@ -610,7 +800,7 @@ style.firebugResetStyles {
                 para.appendChild(child5);
                 para.appendChild(child6);
                 para.appendChild(child7);
-                para.appendChild(child8);      
+                
 
                 $('tbody')[1].appendChild(para);
             }
@@ -636,7 +826,7 @@ style.firebugResetStyles {
                 child1.setAttribute("data-status", "2");
                 child1.setAttribute("class", "txt-smallcaps-light");
                 child1.setAttribute("align", "center");
-                child1.innerHTML = a[i]._id.$oid;
+                child1.innerHTML = a[i].Name;
 
                 var child2 = document.createElement("td");
                 child2.setAttribute("class", "txt-smallcaps-light");
@@ -663,12 +853,7 @@ style.firebugResetStyles {
                 child7.setAttribute("align", "center");
                 child7.innerHTML = parseInt(a[i].Price / a[i].Size);
 
-                var child8 = document.createElement("td");
-                var q = document.createElement("i");
-                child8.setAttribute("align", "center");
-                q.setAttribute("class", "fa fa-search");
-                child8.appendChild(q);
-
+                
                 para.appendChild(child1);
                 para.appendChild(child2);
                 para.appendChild(child3);
@@ -676,7 +861,7 @@ style.firebugResetStyles {
                 para.appendChild(child5);
                 para.appendChild(child6);
                 para.appendChild(child7);
-                para.appendChild(child8);      
+                
 
                 $('tbody')[1].appendChild(para);
             }
@@ -702,7 +887,7 @@ style.firebugResetStyles {
                 child1.setAttribute("data-status", "2");
                 child1.setAttribute("class", "txt-smallcaps-light");
                 child1.setAttribute("align", "center");
-                child1.innerHTML = a[i]._id.$oid;
+                child1.innerHTML = a[i].Name;
 
                 var child2 = document.createElement("td");
                 child2.setAttribute("class", "txt-smallcaps-light");
@@ -728,12 +913,7 @@ style.firebugResetStyles {
                 var child7 = document.createElement("td");
                 child7.setAttribute("align", "center");
                 child7.innerHTML = parseInt(a[i].Price / a[i].Size);
-
-                var child8 = document.createElement("td");
-                var q = document.createElement("i");
-                child8.setAttribute("align", "center");
-                q.setAttribute("class", "fa fa-search");
-                child8.appendChild(q);
+                
 
                 para.appendChild(child1);
                 para.appendChild(child2);
@@ -742,7 +922,7 @@ style.firebugResetStyles {
                 para.appendChild(child5);
                 para.appendChild(child6);
                 para.appendChild(child7);
-                para.appendChild(child8);      
+                
 
                 $('tbody')[1].appendChild(para);
             }
@@ -775,7 +955,7 @@ style.firebugResetStyles {
                 child1.setAttribute("data-status", "2");
                 child1.setAttribute("class", "txt-smallcaps-light");
                 child1.setAttribute("align", "center");
-                child1.innerHTML = a[i]._id.$oid;
+                child1.innerHTML = a[i].Name;
 
                 var child2 = document.createElement("td");
                 child2.setAttribute("class", "txt-smallcaps-light");
@@ -801,12 +981,7 @@ style.firebugResetStyles {
                 var child7 = document.createElement("td");
                 child7.setAttribute("align", "center");
                 child7.innerHTML = parseInt(a[i].Price / a[i].Size);
-
-                var child8 = document.createElement("td");
-                var q = document.createElement("i");
-                child8.setAttribute("align", "center");
-                q.setAttribute("class", "fa fa-search");
-                child8.appendChild(q);
+                
 
                 para.appendChild(child1);
                 para.appendChild(child2);
@@ -815,11 +990,13 @@ style.firebugResetStyles {
                 para.appendChild(child5);
                 para.appendChild(child6);
                 para.appendChild(child7);
-                para.appendChild(child8);      
+                
 
                 $('tbody')[1].appendChild(para);
             }
         }
+
+
 
 
 

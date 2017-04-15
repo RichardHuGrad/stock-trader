@@ -1,4 +1,4 @@
-Stocks Mystery
+Java Hello World Sample
 ==============
 
 This project contains a simple Servlet application.
